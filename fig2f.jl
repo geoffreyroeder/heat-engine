@@ -1,14 +1,10 @@
+println(stderr, "Loading packages...")
 using DifferentialEquations: solve, SDEProblem, SRIW1
 using Plots
 using Arrow
 using DataFrames
 
-
-function makedirp(fp)
-  if ! isdir(dirname(fp))
-    mkdir(dirname(fp))
-  end
-  end
+println(stderr, "Setting up system to solve...")
 
 
 # --- physical relationships between eigenfrequencies and masses
@@ -150,9 +146,11 @@ solver_str = String(Symbol(solver))
 fp = "../data/$(solver_str)_t0$(t0)_t1$(t1)_$(dt).arrow"
 
 if ! isfile(fp)
+  println(stderr, "Solving SDEProblem with $(solver_str)...")
 
   # --- create the directory if it doesn't exist
-  mkdirp(fp) 
+  if ! isdir(dirname(fp))
+    mkdir(dirname(fp))
 
   # --- do solve
   heatengine = SDEProblem(drift!, noise!, u0, (t0,t1), args);
@@ -162,7 +160,7 @@ if ! isfile(fp)
 
   # --- write to file
   Arrow.write(fp, sol)
-  print("Wrote to $(fp)")
+  @info "Wrote to $(fp)"
 else
   print("Loading solution from $(fp)...")
   sol_df = DataFrame(Arrow.Table(fp))
@@ -170,11 +168,11 @@ else
   rename!(sol_df, Symbol.(colnames))
   print("Loaded solution from $(fp) as DataFrame and set column names")
 end
-
 # plot Cantilever displacements vecsus time
 figpath = "../figures/heatengine_displacement_vs_time.png"
 t0 = 0
 
+println(stderr, "Creating figure at $(figpath)...")
 tf_s = 1000 * (milli/sec)
 @show tf_idx = findfirst(x -> x >tf_s, sol_df.t)
 # tf_idx = floor(Int64,tf / dt)
@@ -189,5 +187,7 @@ ylabel!("displacement (m)")
 title!("Cantilever Displacement vs Time")
 
 
-makedirp(figpath)
+if ! isdir(dirname(figpath))
+  mkdir(dirname(figpath))
 savefig("../figures/heatengine_displacement_vs_time.png")
+println(stderr, "Done")
