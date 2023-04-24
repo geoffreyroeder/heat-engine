@@ -2,8 +2,8 @@
 
 # What is this?
 
-Code to reproduce Fig. 2e from: Marc Serra-Garcia, André Foehr, Miguel Molerón, Joseph Lydon, Christopher Chong, and Chiara Daraio
-Phys. Rev. Lett. 117, 010602
+Code to reproduce Fig. 2f from: [[Marc Serra-Garcia, André Foehr, Miguel Molerón, Joseph Lydon, Christopher Chong, and Chiara Daraio
+Phys. Rev. Lett. 117, 010602][https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.117.010602]]
 # Why does this exist?
 1. To understand the Mechanical Autonomous Stochastic Heat Engine by reproducing key results.
 
