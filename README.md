@@ -15,7 +15,7 @@ Clone this repo, and install Julia. Then, open the Julia REPL in the repo direct
 julia> using Pkg
 julia> Pkg.instantiate()
 ```
-This will install all the packages needed to run the code. Then, execute
+This will install all the packages needed to run the code. Then, exit the REPL and execute
 ```
 julia --threads=auto simulate.jl
 ```
@@ -23,4 +23,4 @@ to run the simulation. The results will be saved as "SRIW1_t00.0_t1500.0_3.0e-6.
 ```
 julia --threads=auto plot_fig2f.jl
 ```
-This will plot the results and save it as "fig2f.pdf."
+This will create the plot and save it as "fig2f.pdf" in the repo directory.
