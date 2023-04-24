@@ -15,7 +15,7 @@ Clone this repo, and install Julia. Then, open the Julia REPL in the repo direct
 julia> using Pkg
 julia> Pkg.instantiate()
 ```
-This will install all the packages needed to run the code. Then, exit the REPL and execute
+This will install all the packages needed to run the code, defined in `Manifest.toml` and `Project.toml`. Then, exit the REPL and execute
 ```
 julia --threads=auto simulate.jl
 ```
