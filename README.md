@@ -23,4 +23,4 @@ to run the simulation. The results will be saved as `SRIW1_t00.0_t1500.0_3.0e-6.
 ```
 julia --threads=auto plot_fig2f.jl
 ```
-This will create the plot and save it as "fig2f.pdf" in the repo directory.
+This will create the plot and save it as `fig2f.pdf` in the repo directory.
