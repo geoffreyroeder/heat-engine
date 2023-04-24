@@ -19,7 +19,7 @@ This will install all the packages needed to run the code, defined in `Manifest.
 ```
 julia --threads=auto simulate.jl
 ```
-to run the simulation. The results will be saved as "SRIW1_t00.0_t1500.0_3.0e-6.arrow." To plot the results, run
+to run the simulation. The results will be saved as `SRIW1_t00.0_t1500.0_3.0e-6.arrow`. To plot the results, run
 ```
 julia --threads=auto plot_fig2f.jl
 ```
