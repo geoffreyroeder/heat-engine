@@ -23,4 +23,4 @@ to run the simulation. The results will be saved as `SRIW1_t00.0_t1500.0_3.0e-6.
 ```
 julia --threads=auto plot_fig2f.jl <data_file_name> 
 ```
-where <data_file_name> is `SRIW1_t00.0_t1500.0_3.0e-6.arrow` by default, but will change if you modify any of: the solver, simulation start time, simulation end time, or step size. This script will create the plot and save it as `fig2f.png` in the repo directory. Note that changing simulation parameters will
+where <data_file_name> is `SRIW1_t00.0_t1500.0_3.0e-6.arrow` by default, but will change if you modify any of: the solver, simulation start time, simulation end time, or step size. This script will create the plot and save it as `fig2f.png` in the repo directory.
